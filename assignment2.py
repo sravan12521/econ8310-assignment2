@@ -9,7 +9,7 @@ from xgboost import XGBClassifier
 import joblib
 
 # Load training data
-train_url = "C:\\Users\\sveerannagari\\Desktop\\assign 2\\econ8310-assignment2\\assignment2train.csv"
+train_url = "https://github.com/dustywhite7/Econ8310/raw/master/AssignmentData/assignment3.csv"
 data = pd.read_csv(train_url)
 
 # Define target variable and features
@@ -27,7 +27,7 @@ model = XGBClassifier(n_estimators=100, max_depth=8, learning_rate=0.2, random_s
 modelFit = model.fit(x, y)
 
 # Load test data
-test_url = "C:\\Users\\sveerannagari\\Desktop\\assign 2\\econ8310-assignment2\\assignment2test.csv"
+test_url = "https://github.com/dustywhite7/Econ8310/raw/master/AssignmentData/assignment3test.csv"
 test_data = pd.read_csv(test_url)
 test_data = test_data.drop(columns=['id', 'DateTime'])  # Drop non-numeric columns
 test_data = pd.get_dummies(test_data, drop_first=True)
